@@ -51,6 +51,7 @@ typedef struct DOLPHIN_PROC
 typedef void(*MEM_INIT)(void);
 typedef void(*MEM_SUSPEND)(void);
 typedef UNK* POINTER_POSITION;
+typedef void(*SET_MEM_ROUTER)(MEMORY_ROUTER);
 
 /* CREATE A UNION TO ALLOCATE THE */
 /* THE CURRENT POSITION OF THE MEMORY */
