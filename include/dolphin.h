@@ -15,10 +15,10 @@
 
 /* NESTED INCLUDES */
 
-#include <stdio.h>
 #include <iosfwd>
-#include <thread>
 #include <process.h>
+#include <stdio.h>
+#include <thread>
 
 /* USING THE C CONVENTION CALL SCHEMA */
 /* I CAN DYNAMICALLY LOAD THE PROGRAM */
@@ -36,35 +36,8 @@ extern DECLSPEC U32 REVO_CALL REVO_SUSPEND(void);
 #ifndef PROCESS_MEMORY
 #define PROCESS_MEMORY
 
-typedef struct DOLPHIN_PROC
-{
-	typedef bool(*VALID_BASE_ADDR());
-	typedef U32* BASE_ADDR(void);
-	typedef U32* CONVERT_MEM_ADDR(U32* ADDRESS);
-};
-
-#endif
-
-#ifndef MEMORY_MANAGEMENT
-#define MEMORY_MANAGMENT
-
-typedef void(*MEM_INIT)(void);
-typedef void(*MEM_SUSPEND)(void);
-typedef UNK* POINTER_POSITION;
-typedef void(*SET_MEM_ROUTER)(MEMORY_ROUTER);
-
-/* CREATE A UNION TO ALLOCATE THE */
-/* THE CURRENT POSITION OF THE MEMORY */
-
-typedef struct MEMORY_ROUTER
-{
-	union ALLOCATION
-	{
-		ALLOCATION* GET(void);
-		ALLOCATION* SET(void);
-	};
-};
-
+#define FUNCTION_POINTER(NAME) 
+#define FUNCTION_POINTER(...)(__VA_ARGS__)
 #endif
 
 #endif
