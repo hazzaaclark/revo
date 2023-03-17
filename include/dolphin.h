@@ -44,4 +44,26 @@ typedef struct DOLPHIN_PROC
 };
 
 #endif
+
+#ifndef MEMORY_MANAGEMENT
+#define MEMORY_MANAGMENT
+
+typedef void(*MEM_INIT)(void);
+typedef void(*MEM_SUSPEND)(void);
+typedef UNK* POINTER_POSITION;
+
+/* CREATE A UNION TO ALLOCATE THE */
+/* THE CURRENT POSITION OF THE MEMORY */
+
+typedef struct MEMORY_ROUTER
+{
+	union ALLOCATION
+	{
+		ALLOCATION* GET(void);
+		ALLOCATION* SET(void);
+	};
+};
+
+#endif
+
 #endif
