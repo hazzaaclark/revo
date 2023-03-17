@@ -40,9 +40,8 @@ typedef struct DOLPHIN_PROC
 {
 	typedef bool(*VALID_BASE_ADDR());
 	typedef U32* BASE_ADDR(void);
+	typedef U32* CONVERT_MEM_ADDR(U32* ADDRESS);
 };
 
 #endif
-
-
 #endif
