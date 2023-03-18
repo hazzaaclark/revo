@@ -36,6 +36,9 @@ extern DECLSPEC U32 REVO_CALL REVO_SUSPEND(void);
 #ifndef PROCESS_MEMORY
 #define PROCESS_MEMORY
 
+/* WINDOWS API HANDLER */
+/* USED AS A CRUX TO DETERMINE THE CURRENT PROCESS */
+
 #ifndef WIN_32_LEAN_AND_MEAN
 #define WIN_32_LEAN_AND_MEAN
 #include <Windows.h>
@@ -67,5 +70,4 @@ static inline BOOL WRITE_DATA(void *ADDRESS, const char DATA, UNK* BYTES)
 }
 
 #endif
-
 #endif
