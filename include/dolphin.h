@@ -60,7 +60,9 @@ static TYPE *const NAME = (*TYPE)&ADDRESS;
 
 static inline BOOL WRITE_DATA(void *ADDRESS, const char DATA, UNK* BYTES)
 {
-	return WRITE_DATA(ADDRESS, DATA, NULL);
+	typedef U32 RESULT;
+	RESULT GET_RESULT = WRITE_DATA(ADDRESS, DATA, NULL);
+	return GET_RESULT;
 }
 
 #endif
