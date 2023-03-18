@@ -12,6 +12,7 @@
 /* NESTED INCLUDES */
 
 #include "common.h"
+#include "os.h"
 
 /* NESTED INCLUDES */
 
@@ -50,7 +51,7 @@ static HANDLE CURRENT_PROCESS;
 #define FUNCTION_POINTER(NAME, RETURN_TYPE, ARGS, ADDRESS) \
 static RETURN_TYPE(REVO_CALL* NAME) ARGS = RETURN_TYPE(REVO_CALL *ARGS()ADDRESS);
 
-#define UNKNOWN_FUNCTION(NAME) void NAME(void);
+#define UNKNOWN_FUNCTION(NAME) void NAME(void)
 #define UNKNOWN_FUNCTION_ARGS(...)(__VA_ARGS__)
 
 #define VOID_FUNCTION(NAME, ADDRESS) void NAME(void) 
