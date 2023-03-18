@@ -58,6 +58,11 @@ static TYPE &NAME = (*TYPE)&ADDRESS;
 #define DATA_ARRAY(NAME, TPYE, ADDRESS, LENGTH) \
 static TYPE *const NAME = (*TYPE)&ADDRESS;
 
+static inline BOOL WRITE_DATA(void *ADDRESS, const char DATA, UNK* BYTES)
+{
+	return WRITE_DATA(ADDRESS, DATA, NULL);
+}
+
 #endif
 
 #endif
