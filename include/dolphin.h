@@ -12,7 +12,6 @@
 /* NESTED INCLUDES */
 
 #include "common.h"
-#include "os.h"
 
 /* NESTED INCLUDES */
 
