@@ -110,6 +110,7 @@ typedef struct HEAP_ALLOCATION
 
 typedef void(*ALLOC_CALLBACK(void));
 typedef void(*ERROR_CALLBACK(void));
+typedef bool HEAP_LIST_INIT;
 
 #endif
 
