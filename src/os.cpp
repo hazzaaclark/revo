@@ -1,6 +1,6 @@
 /* Copyright (C) 2023 Harry Clark */
 
-/* Mario Kart Wii DIscord Rich Presence */
+/* Mario Kart Wii Discord Rich Presence */
 
 /* THIS FILE PERTAINS TO THE MAIN FUNCTIONALITY OF THE */
 /* OS' THREADDING AND HEAP STACK ORGANISATION */
