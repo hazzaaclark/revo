@@ -20,6 +20,9 @@
 #define OS_BUS_CLOCK 0x800000F8
 #define OS_TIMER_CLOCK (OS_BUS_CLOCK >> 2)
 #define OS_SLEEP 5000
+#define OS_MSEC 
+#define OS_SECONDS_TO_TICK() ((OS_MSEC * (OS_TIMER_CLOCK) / 1000))
+#define OS_SLEEP_TICK() (OS_MSEC)
 
 typedef struct THREAD
 {
