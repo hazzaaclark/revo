@@ -1,6 +1,6 @@
 /* Copyright (C) 2023 Harry Clark */
 
-/* Mario Kart Wii DIscord Rich Presence */
+/* Mario Kart Wii Discord Rich Presence */
 
 /* THIS FILE PERTAINS TO THE FUNCTIONALITY OF THE DOLPHIN */
 /* EMULATOR; PROVIDING CLARITY AND DECLARATIONS FOR FUNCTIONS */
