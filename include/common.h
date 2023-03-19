@@ -1,6 +1,6 @@
 /* Copyright (C) 2023 Harry Clark */
 
-/* Mario Kart Wii DIscord Rich Presence */
+/* Mario Kart Wii Discord Rich Presence */
 
 /* THIS FILE IS ABOUT COMMON DATA TYPES USED THROUGHOUT THE PROJECT */
 /* CREATING TYPE DEFINED METHODS TO INSTANTIATE RAW POINTERS FOR MY */
