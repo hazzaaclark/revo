@@ -68,6 +68,11 @@ typedef struct HEAP
 		FRAME,
 		UNIT
 	};
+
+	typedef bool GET_HEAP_EXPAND();
+	typedef HEAP* GET_PARENT();
+	typedef void(*GET_ADDRESS(void));
+
 };
 
 typedef struct EXP_HEAP : HEAP{};
@@ -83,6 +88,7 @@ typedef struct HEAP_ALLOCATION
 	HEAP* ALLOC_HEAP;
 };
 
+typedef void(*ALLOC_CALLBACK(void));
 typedef void(*ERROR_CALLBACK(void));
 
 #endif
