@@ -105,7 +105,6 @@ typedef struct HEAP_ALLOCATION
 	U32 ARG;
 	U32 SIZE;
 	U32 ALIGNMENT;
-	typedef HEAP* ALLOC_HEAP;
 };
 
 typedef void(*ALLOC_CALLBACK(void));
