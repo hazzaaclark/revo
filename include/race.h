@@ -25,6 +25,7 @@ typedef struct GAME_SCENE
 {
 	typedef U8* HEAP_RANGE[];
 	GAME_SCENE* GET_SCENE();
+	EXP_HEAP* GET_HEAP(S32 HEAP_INDEX);
 };
 
 #endif
