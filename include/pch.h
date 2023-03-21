@@ -11,5 +11,7 @@
 #include "framework.h"
 #include "common.h"
 #include "dolphin.h"
+#include "os.h"
+#include "race.h"
 
 #endif //PCH_H
