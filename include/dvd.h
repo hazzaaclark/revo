@@ -25,7 +25,14 @@ typedef enum DVD_STATE
 	MOUNTED = 3,
 };
 
-typedef struct DVD_ARCHIVE{};
+typedef struct DVD_ARCHIVE
+{
+	typedef void(*MOUNT);
+	typedef void(*LOAD);
+	typedef void(*LOAD_UNUSED);
+};
+
+
 typedef struct MULTI_DVD : DVD_ARCHIVE{};
 typedef struct RESOURCE_MANAGER : DVD_ARCHIVE{};
 
