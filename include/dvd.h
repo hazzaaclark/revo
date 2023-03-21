@@ -17,4 +17,16 @@
 #include "dolphin.h"
 #include "os.h"
 
+typedef enum DVD_STATE
+{
+	CLEARED = 0,
+	RIPPED = 1,
+	DECOMP = 2,
+	MOUNTED = 3,
+};
+
+typedef struct DVD_ARCHIVE{};
+typedef struct MULTI_DVD : DVD_ARCHIVE{};
+typedef struct RESOURCE_MANAGER : DVD_ARCHIVE{};
+
 #endif
