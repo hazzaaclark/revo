@@ -26,9 +26,9 @@
 
 typedef struct THREAD
 {
-	CHAR* STACK_LOW;
-	CHAR* STACK_HIGH;
-	U32* OS_ERROR;
+	typedef char* STACK_LOW;
+	typedef char* STACK_HIGH;
+	typedef char* OS_ERROR;
 };
 
 typedef struct THREAD_QUEUE
