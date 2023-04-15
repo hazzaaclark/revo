@@ -52,6 +52,15 @@ typedef enum CHARACTERS
 	BIRDO = 0x11,
 	DIDDY_KONG = 0x12,
 	BOWSER_JR = 0x14,
+
+	WARIO = 0xB,
+	WALUIGI = 0x2,
+	DONKEY_KONG = 0x9,
+	BOWSER = 0x3,
+	KING_BOO = 0x13,
+	ROSALINA = 0x17,
+	FUNKY_KONG = 0x16,
+	DRY_BOWSER = 0x15
 };
 
 
