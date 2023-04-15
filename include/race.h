@@ -42,7 +42,16 @@ typedef enum CHARACTERS
 	TOAD = 0x8,
 	TOADETTE = 0xD,
 	KOOPA_TROOPA = 0xE,
-	DRY_BONES = 0x5
+	DRY_BONES = 0x5,
+
+	MARIO = 0x0,
+	LUIGI = 0x7,
+	PEACH = 0x10,
+	DAISY = 0xF,
+	YOSHI = 0xA,
+	BIRDO = 0x11,
+	DIDDY_KONG = 0x12,
+	BOWSER_JR = 0x14,
 };
 
 
