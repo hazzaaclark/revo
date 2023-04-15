@@ -11,6 +11,7 @@
 
 /* NESTED INCLUDES */
 
+#include "dvd.h"
 #include "os.h"
 #include "common.h"
 
@@ -27,9 +28,26 @@ extern DECLSPEC REVO_CALL S16 COURSE_ID_SLOT;
 #define MAX_PLAYER 12
 #define COURSE_CACHE_STATE (0 << 3)
 
-#define COURSE_FILE_NAME(VALUE) \
-static DECLSPEC REVO_CALL COURSE_FILE(const char* FILENAME);
+#define COURSE_FILE_NAME(VALUE, ID) \
+static DECLSPEC REVO_CALL COURSE_FILE(const char* FILENAME, COURSE_ID_SLOT);
 
 #endif
+
+typedef enum CHARACTERS
+{
+	BABY_MARIO = 0x6,
+	BABY_LUIGI = 0xC,
+	BABY_PEACH = 0x1,
+	BABY_DAISY = 0x4,
+	TOAD = 0x8,
+	TOADETTE = 0xD,
+	KOOPA_TROOPA = 0xE,
+	DRY_BONES = 0x5
+};
+
+
+VOID_FUNCTION(GET_CHARACTER_NAME);
+VOID_FUNCTION(GET_TRACK_NAME);
+VOID_FUNCTION(GET_FILE);
 
 #endif
