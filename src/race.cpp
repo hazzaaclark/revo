@@ -29,5 +29,8 @@ static inline void GET_COURSE_NAME(RACE_MANAGER::RACE_INDEX INDEX)
 	switch (INDEX)
 	{
 	    case 0x0:
+
+		default:
+			break;
 	}
 }
