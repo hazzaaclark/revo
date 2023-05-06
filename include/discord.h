@@ -23,6 +23,17 @@
 extern "C" {}
 #endif
 
+#ifndef DISCORD_REPLY_HANDLES
+#define DISCORD_REPLY_HANDLES
+
+#define DISCORD_REPLY_NO 0
+#define DISCORD_REPLY_YES 1
+#define DISCORD_REPLY_IGNORE 2
+#define DISCORD_PARTY_PRIVATE 3
+#define DISCORD_PARTY_PUBLIC 4
+
+#endif
+
 typedef struct DISCORD_RICH_PRESENCE
 {
 	typedef const char* STATE;
