@@ -1,0 +1,23 @@
+/* Copyright (C) 2023 Harry Clark */
+
+/* Mario Kart Wii Discord Rich Presence */
+
+/* THIS FILE PERTAINS TO THE FUNCTIONALITY OF THE DISCORD API */
+/* AND ALL OF THE METHODS PERTAINING TO IT */
+
+#ifndef DISCORD
+#define DISCORD
+
+/* NESTED INCLUDES */
+
+#include "common.h"
+#include "dolphin.h"
+
+#if defined(DISCORD_LIB)
+#define DISCORD_EXPORT (DECLSPEC)
+#else
+#define DISCORD_EXPORT (DECLSPEC)
+
+#endif
+
+#endif
