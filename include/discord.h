@@ -14,10 +14,13 @@
 #include "dolphin.h"
 
 #if defined(DISCORD_LIB)
-#define DISCORD_EXPORT (DECLSPEC)
+#define DISCORD_EXPORT DECLSPEC (dllexport)
 #else
-#define DISCORD_EXPORT (DECLSPEC)
+#define DISCORD_EXPORT DECLSPEC (dllimport)
+#endif
 
+#ifdef __cplusplus
+extern "C" {}
 #endif
 
 #endif
