@@ -32,6 +32,8 @@ extern "C" {}
 
 #endif
 
+#define DISCORD_APP_ID 993591242724212800
+
 typedef struct DISCORD_RICH_PRESENCE
 {
 	typedef const char* STATE;
