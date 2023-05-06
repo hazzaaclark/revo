@@ -36,4 +36,19 @@ typedef struct DISCORD_RICH_PRESENCE
 	typedef S8 INSTANCE;
 };
 
+typedef struct DISCORD_USER
+{
+	typedef const char* USER_ID;
+	typedef const char* USERNAME;
+	typedef const char* DISCRIMNATOR;
+	typedef const char* AVATAR;
+};
+
+typedef struct DISCORD_EVENT_HANDLERS
+{
+	typedef void(*READY)(const DISCORD_USER* REQUEST);
+	typedef void(*DISCONNECTED)(int ERROR_CODE, const char* MESSAGE);
+	typedef void(*MALFUNCTION)(int ERROR_CODE, const char* MESSAGE);
+};
+
 #endif
