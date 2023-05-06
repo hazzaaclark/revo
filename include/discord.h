@@ -36,23 +36,23 @@ extern "C" {}
 
 typedef struct DISCORD_RICH_PRESENCE
 {
-	typedef const char* STATE;
-	typedef const char* DETAILS;
-	typedef S64 START;
-	typedef S64 END;
-	typedef const char* LARGE_IMAGE_KEY;
-	typedef const char* LARGE_IMAGE_TEXT;
-	typedef const char* SMALL_IMAGE_KEY;
-	typedef const char* SMALL_IMAGE_TEXT;
-	typedef S8 INSTANCE;
+	const char* STATE;
+	const char* DETAILS;
+	S64 START;
+	S64 END;
+	const char* LARGE_IMAGE_KEY;
+	const char* LARGE_IMAGE_TEXT;
+	const char* SMALL_IMAGE_KEY;
+	const char* SMALL_IMAGE_TEXT;
+	S8 INSTANCE;
 };
 
 typedef struct DISCORD_USER
 {
-	typedef const char* USER_ID;
-	typedef const char* USERNAME;
-	typedef const char* DISCRIMNATOR;
-	typedef const char* AVATAR;
+	const char* USER_ID;
+	const char* USERNAME;
+	const char* DISCRIMNATOR;
+	const char* AVATAR;
 };
 
 typedef struct DISCORD_EVENT_HANDLERS
@@ -62,19 +62,6 @@ typedef struct DISCORD_EVENT_HANDLERS
 	typedef void(*MALFUNCTION)(int ERROR_CODE, const char* MESSAGE);
 };
 
-#ifndef DEBUG_HANDLES
-#define DEBUG_HANDLES
-
-#define MAX_DEBUG_MSG_SIZE (16 * 1024)
-#define MAX_DEBUG_QUEUE_SIZE 8
-
-typedef struct DISCORD_DEBUG
-{
-	typedef UNK MESSAGE_LENGTH;
-	typedef char BUFFER[MAX_DEBUG_MSG_SIZE];
-};
-
-#endif
 
 DISCORD_EXPORT void DISCORD_INIT_CLIENT(U64 APP_ID, DISCORD_EVENT_HANDLERS* HANDLERS, U32 REGISTER);
 DISCORD_EXPORT void DISCORD_RUN_CALLBACKS();
