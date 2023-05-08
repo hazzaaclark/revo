@@ -110,6 +110,7 @@ typedef struct RACE_CACHE
 {
 	typedef void(*CACHE_INIT)(void);
 	typedef void(*CACHE_LOAD)(void);
+	typedef void(*CACHE_FREE)(void);
 	typedef void(*CACHE_LOAD_HEAP)(DVD_ARCHIVE* DVD_ARCHIVE, HEAP* HEAP);
 	void(*CACHE_BUFFER)(void);
 	void(*CACHE_BLOCK)(void);
@@ -123,11 +124,8 @@ typedef struct RACE_CACHE
 
 typedef struct RACE_MANAGER
 {
-	typedef DVD_ARCHIVE* SCENE_ARCHIVE();
-	typedef DVD_ARCHIVE* SYSTEM_ARCHIVE;
-	CHARACTER_MANAGER* CHARACTER_MANAGER[4];
-	OS_TASK_CONTEXT* TASK[8];
-	RACE_CACHE* RACE_CACHE;
+	static DVD_ARCHIVE* SCENE_ARCHIVE;
+	static DVD_ARCHIVE* SYSTEM_ARCHIVE;
 
 	typedef char* RACE_FILENAME;
 	typedef U32 RACE_INDEX;
@@ -141,13 +139,6 @@ typedef struct CHARACTER_MANAGER
 {
 	typedef char* NAME(CHARACTERS* CHARACTERS);
 	typedef void(*PRELOAD_COURSE(COURSES* COURSES));
-};
-
-typedef struct OS_TASK_CONTEXT
-{
-	DVD_ARCHIVE* DVD_ARCHIVE;
-	HEAP* HEAP_ARCHIVE;
-	HEAP* HEAP_FILE;
 };
 
 VOID_FUNCTION(GET_CHARACTER_NAME);
