@@ -113,6 +113,25 @@ static inline void GET_COURSE_NAME(RACE_MANAGER::RACE_INDEX INDEX, DISCORD_RICH_
 		PRESENCE->LARGE_IMAGE_TEXT = "Racing through precarious conditions";
 		break;
 
+		/*-----------------------------------------------------*/
+		/*                    SPECIAL CUP                      */
+		/*-----------------------------------------------------*/
+
+	case COURSES::DRY_DRY_RUINS:
+		PRESENCE->LARGE_IMAGE_KEY = "Dry Dry Ruins";
+		PRESENCE->LARGE_IMAGE_TEXT = "Racing in the scorching heat";
+		break;
+
+	case COURSES::MOONVIEW_HIGHWAY:
+		PRESENCE->LARGE_IMAGE_KEY = "Moonview Highway";
+		PRESENCE->LARGE_IMAGE_TEXT = "Dodging oncoming traffic";
+		break;
+
+	case COURSES::BOWSERS_CASTLE:
+		PRESENCE->LARGE_IMAGE_KEY = "Bowser's Castle";
+		PRESENCE->LARGE_IMAGE_TEXT = "Traversing tight corridors";
+		break;
+
 		default:
 			LOAD_COURSE();
 			break;
