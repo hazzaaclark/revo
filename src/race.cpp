@@ -89,6 +89,30 @@ static inline void GET_COURSE_NAME(RACE_MANAGER::RACE_INDEX INDEX, DISCORD_RICH_
 		PRESENCE->LARGE_IMAGE_TEXT = "Dodging Minecarts";
 		break;
 
+		/*-----------------------------------------------------*/
+		/*                       STAR CUP                      */
+		/*-----------------------------------------------------*/
+
+	case COURSES::DAISY_CIRCUIT:
+		PRESENCE->LARGE_IMAGE_KEY = "Daisy Circuit";
+		PRESENCE->LARGE_IMAGE_TEXT = "Cruising at Sunset";
+		break;
+
+	case COURSES::KOOPA_CAPE:
+		PRESENCE->LARGE_IMAGE_KEY = "Koopa Cape";
+		PRESENCE->LARGE_IMAGE_TEXT = "Riding the Waves";
+		break;
+
+	case COURSES::MAPLE_TREEWAY:
+		PRESENCE->LARGE_IMAGE_KEY = "Maple Treeway";
+		PRESENCE->LARGE_IMAGE_TEXT = "Frolicking through the Trees";
+		break;
+
+	case COURSES::GRUMBLE_VOLCANO:
+		PRESENCE->LARGE_IMAGE_KEY = "Grumble Volcano";
+		PRESENCE->LARGE_IMAGE_TEXT = "Racing through precarious conditions";
+		break;
+
 		default:
 			LOAD_COURSE();
 			break;
