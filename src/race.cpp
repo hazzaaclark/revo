@@ -40,6 +40,11 @@ static inline void GET_COURSE_NAME(RACE_MANAGER::RACE_INDEX INDEX, DISCORD_RICH_
 {
 	switch (INDEX)
 	{
+
+		/*-----------------------------------------------------*/
+		/*                     MUSHROOM CUP                    */
+		/*-----------------------------------------------------*/
+
 	case COURSES::LUIGI_CIRCUIT:
 		PRESENCE->LARGE_IMAGE_KEY = "Luigi Circuit";
 		PRESENCE->LARGE_IMAGE_TEXT = "Going for Gold";
@@ -58,6 +63,30 @@ static inline void GET_COURSE_NAME(RACE_MANAGER::RACE_INDEX INDEX, DISCORD_RICH_
 	case COURSES::TOADS_FACTORY:
 		PRESENCE->LARGE_IMAGE_KEY = "Toad's Factory";
 		PRESENCE->LARGE_IMAGE_TEXT = "Disrupting the production of goods";
+		break;
+
+		/*-----------------------------------------------------*/
+		/*                       FLOWER CUP                    */
+		/*-----------------------------------------------------*/
+
+	case COURSES::MARIO_CIRCUIT:
+		PRESENCE->LARGE_IMAGE_KEY = "Mario Circuit";
+		PRESENCE->LARGE_IMAGE_TEXT = "Racing around Peach's Castle";
+		break;
+
+	case COURSES::COCONUT_MALL:
+		PRESENCE->LARGE_IMAGE_KEY = "Coconut Mall";
+		PRESENCE->LARGE_IMAGE_TEXT = "Doing some Shopping";
+		break;
+
+	case COURSES::DK_SUMMIT:
+		PRESENCE->LARGE_IMAGE_KEY = "DK Summit";
+		PRESENCE->LARGE_IMAGE_TEXT = "Cranking 360's";
+		break;
+
+	case COURSES::WARIOS_GOLD_MINE:
+		PRESENCE->LARGE_IMAGE_KEY = "Wario's Gold Mine";
+		PRESENCE->LARGE_IMAGE_TEXT = "Dodging Minecarts";
 		break;
 
 		default:
