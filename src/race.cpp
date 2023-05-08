@@ -132,6 +132,10 @@ static inline void GET_COURSE_NAME(RACE_MANAGER::RACE_INDEX INDEX, DISCORD_RICH_
 		PRESENCE->LARGE_IMAGE_TEXT = "Traversing tight corridors";
 		break;
 
+	case COURSES::RAINBOW_ROAD:
+		PRESENCE->LARGE_IMAGE_KEY = "Rainbow Road";
+		PRESENCE->LARGE_IMAGE_TEXT = "Riding the road of tranquility";
+
 		default:
 			LOAD_COURSE();
 			break;
@@ -139,9 +143,9 @@ static inline void GET_COURSE_NAME(RACE_MANAGER::RACE_INDEX INDEX, DISCORD_RICH_
 
 	DISCORD_UPDATE(PRESENCE);
 
-	if (INDEX < 0 || INDEX >= MAX_CHARACTERS)
+	if (INDEX < 0 || INDEX >= MAX_COURSES)
 	{
-		printf("Invalid character index\n");
+		printf("Invalid course index\n");
 		INDEX = 0;
 	}
 
