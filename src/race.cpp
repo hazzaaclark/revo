@@ -64,4 +64,14 @@ static inline void GET_COURSE_NAME(RACE_MANAGER::RACE_INDEX INDEX, DISCORD_RICH_
 			LOAD_COURSE();
 			break;
 	}
+
+	DISCORD_UPDATE(PRESENCE);
+
+	if (INDEX < 0 || INDEX >= MAX_CHARACTERS)
+	{
+		printf("Invalid character index\n");
+		INDEX = 0;
+	}
+
+	DISCORD_SHUTDOWN();
 }
