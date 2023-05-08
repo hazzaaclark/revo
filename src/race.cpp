@@ -13,6 +13,7 @@
 /* NESTED INCLUDES */
 
 #include "discord.h"
+#include "dolphin.h"
 #include "race.h"
 
 /* LOAD THE DESIGNATED COURSES ACCORDING TO THE MEMORY ADDRESS */
@@ -33,30 +34,28 @@ static inline RACE_MANAGER::LOAD_COURSE* LOAD_COURSE(void)
 /* THIS WILL TAKE INTO ACCOUNT THE HEX VALUE OF THE COURSE FROM THE */
 /* DESIGNATED ENUM IN THE HEADER FILE AND CALL BACK TO THE API */
 
-static inline void GET_COURSE_NAME(RACE_MANAGER::RACE_INDEX INDEX,
-	                               DISCORD_RICH_PRESENCE::LARGE_IMAGE_KEY LARGE_IMAGE,
-	                               DISCORD_RICH_PRESENCE::LARGE_IMAGE_TEXT LARGE_TEXT)
+static inline void GET_COURSE_NAME(RACE_MANAGER::RACE_INDEX INDEX, DISCORD_RICH_PRESENCE* PRESENCE)
 {
 	switch (INDEX)
 	{
 	case COURSES::LUIGI_CIRCUIT:
-		LARGE_IMAGE = "Luigi Circuit";
-		LARGE_TEXT = "Going for Gold";
+		PRESENCE->LARGE_IMAGE_KEY = "Luigi Circuit";
+		PRESENCE->LARGE_IMAGE_TEXT = "Going for Gold";
 			break;
 
 	case COURSES::MOO_MOO_MEADOWS:
-		LARGE_IMAGE = "Moo Moo Meadows";
-		LARGE_TEXT = "Avoiding Cows";
+		PRESENCE->LARGE_IMAGE_KEY = "Moo Moo Meadows";
+		PRESENCE->LARGE_IMAGE_TEXT = "Avoiding Cows";
 		break;
 
 	case COURSES::MUSHROOM_GORGE:
-		LARGE_IMAGE = "Mushroom Gorge";
-		LARGE_TEXT = "Bouncing on Mushrooms";
+		PRESENCE->LARGE_IMAGE_KEY = "Mushroom Gorge";
+		PRESENCE->LARGE_IMAGE_TEXT = "Bouncing on Mushrooms";
 		break;
 
 	case COURSES::TOADS_FACTORY:
-		LARGE_IMAGE = "Toad's Factory";
-		LARGE_TEXT = "Disrupting the production of goods";
+		PRESENCE->LARGE_IMAGE_KEY = "Toad's Factory";
+		PRESENCE->LARGE_IMAGE_TEXT = "Disrupting the production of goods";
 		break;
 
 		default:
