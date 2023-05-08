@@ -27,6 +27,8 @@ static inline RACE_MANAGER::LOAD_COURSE* LOAD_COURSE(void)
 	{
 		RACE_MANAGER::RACE_FILENAME* FILE;
 		FILE += FILENAME(&COURSE_ID_SLOT, sizeof(COURSE_NAME));
+
+		return;
 	}
 };
 
