@@ -42,11 +42,6 @@ static inline void GET_COURSE_NAME(RACE_MANAGER::RACE_INDEX INDEX, DISCORD_RICH_
 
 	switch (INDEX)
 	{
-	
-	default:
-		printf("Invalid course index\n");
-		INDEX = 0;
-		break;
 
 		/*-----------------------------------------------------*/
 		/*                     MUSHROOM CUP                    */
@@ -55,7 +50,7 @@ static inline void GET_COURSE_NAME(RACE_MANAGER::RACE_INDEX INDEX, DISCORD_RICH_
 	case COURSES::LUIGI_CIRCUIT:
 		PRESENCE->LARGE_IMAGE_KEY = "Luigi Circuit";
 		PRESENCE->LARGE_IMAGE_TEXT = "Going for Gold";
-			break;
+		break;
 
 	case COURSES::MOO_MOO_MEADOWS:
 		PRESENCE->LARGE_IMAGE_KEY = "Moo Moo Meadows";
@@ -142,6 +137,13 @@ static inline void GET_COURSE_NAME(RACE_MANAGER::RACE_INDEX INDEX, DISCORD_RICH_
 	case COURSES::RAINBOW_ROAD:
 		PRESENCE->LARGE_IMAGE_KEY = "Rainbow Road";
 		PRESENCE->LARGE_IMAGE_TEXT = "Riding the road of tranquility";
+		break;
+
+
+	default:
+		printf("Invalid course index\n");
+		INDEX = 0;
+		break;
 	}
 
 	DISCORD_UPDATE();
