@@ -38,8 +38,15 @@ static inline RACE_MANAGER::LOAD_COURSE* LOAD_COURSE(void)
 
 static inline void GET_COURSE_NAME(RACE_MANAGER::RACE_INDEX INDEX, DISCORD_RICH_PRESENCE* PRESENCE)
 {
+	LOAD_COURSE();
+
 	switch (INDEX)
 	{
+	
+	default:
+		printf("Invalid course index\n");
+		INDEX = 0;
+		break;
 
 		/*-----------------------------------------------------*/
 		/*                     MUSHROOM CUP                    */
@@ -135,19 +142,8 @@ static inline void GET_COURSE_NAME(RACE_MANAGER::RACE_INDEX INDEX, DISCORD_RICH_
 	case COURSES::RAINBOW_ROAD:
 		PRESENCE->LARGE_IMAGE_KEY = "Rainbow Road";
 		PRESENCE->LARGE_IMAGE_TEXT = "Riding the road of tranquility";
-
-		default:
-			LOAD_COURSE();
-			break;
 	}
 
-	DISCORD_UPDATE(PRESENCE);
-
-	if (INDEX < 0 || INDEX >= MAX_COURSES)
-	{
-		printf("Invalid course index\n");
-		INDEX = 0;
-	}
-
+	DISCORD_UPDATE();
 	DISCORD_SHUTDOWN();
 }
