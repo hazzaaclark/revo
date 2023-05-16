@@ -139,6 +139,30 @@ static inline void GET_COURSE_NAME(RACE_MANAGER::RACE_INDEX INDEX, DISCORD_RICH_
 		PRESENCE->LARGE_IMAGE_TEXT = "Riding the road of tranquility";
 		break;
 
+		/*-----------------------------------------------------*/
+		/*                      SHELL CUP                      */
+		/*-----------------------------------------------------*/
+
+	case COURSES::GCN_PEACH_BEACH:
+		PRESENCE->LARGE_IMAGE_KEY = "GCN Peach Beach";
+		PRESENCE->LARGE_IMAGE_TEXT = "Cruising along the shore";
+		break;
+
+	case COURSES::DS_YOSHI_FALLS:
+		PRESENCE->LARGE_IMAGE_KEY = "DS Yoshi Falls";
+		PRESENCE->LARGE_IMAGE_TEXT = "Circling the Yoshi Egg";
+		break;
+
+	case COURSES::SNES_GHOST_VALLEY_2:
+		PRESENCE->LARGE_IMAGE_KEY = "SNES Ghost Valley 2";
+		PRESENCE->LARGE_IMAGE_TEXT = "Ooooo scary Boo's";
+		break;
+
+	case COURSES::N64_MARIO_RACEWAY:
+		PRESENCE->LARGE_IMAGE_KEY = "N64 Mario Raceway";
+		PRESENCE->LARGE_IMAGE_TEXT = "and the crowd goes wild!";
+		break;
+
 
 	default:
 		printf("Invalid course index\n");
