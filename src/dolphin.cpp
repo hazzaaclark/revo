@@ -25,4 +25,15 @@ static inline DOLPHIN_POINTER* GET_DOLPHIN_INSTANCE(LONG ADDR_ACCESS,
 	calloc(1, sizeof(MEMORY));
 }
 
+static inline REVO_INSTANCE* GET_REVO_INSTANCE(void)
+{
+	if (!REVO_INSTANCE::GAME_ID)
+	{
+		REVO_INSTANCE::LOAD_GAME_ID* LOAD_GAME_ID;
+		LOAD_GAME_ID += (1, sizeof(ID));
+
+		return;
+	};
+};
+
 #endif
