@@ -84,6 +84,7 @@ static inline U64 REVO_CALL DELTA_TIME(U64* const TIME)
 #define USE_GAME_PARAMS
 
 typedef void(*ADDRESS)(void);
+typedef void(*MEM_SOURCE)(void);
 
 #endif
 
