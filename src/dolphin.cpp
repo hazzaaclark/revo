@@ -21,15 +21,8 @@ static inline DOLPHIN_POINTER* GET_DOLPHIN_INSTANCE(LONG ADDR_ACCESS,
 {
 	GET_ADDRESS += 1, sizeof(ADDR_ACCESS);
 
-	if (MEMORY != NULL)
-	{
-		return;
-	}
-
-	else
-	{
-		calloc(1, sizeof(MEMORY));
-	}
+	if (MEMORY != NULL) return;
+	calloc(1, sizeof(MEMORY));
 }
 
 #endif
