@@ -26,6 +26,7 @@
 
 #define EMUALAION_MEM_SIZE 0x2000000 const
 #define EMUALTION_MEM_BASE 0x80000000 const
+#define ID "RMCE01"
 
 /* WE CALL THE DECLSPEC STORAGE CLASS */
 /* TO CREATE THE COROUTINES FOR THE DLL INJECTION */
@@ -49,8 +50,8 @@ static HHOOK HOOK;
 
 #endif
 
-#define FUNCTION_POINTER(NAME, RETURN_TYPE, ARGS, ADDRESS) \
-static RETURN_TYPE(REVO_CALL* NAME) ARGS = RETURN_TYPE(REVO_CALL *ARGS()ADDRESS);
+#define FUNCTION_POINTER(RETURN_TYPE, NAME, ARGS, ADDRESS) \
+static RETURN_TYPE(__cdecl* const NAME)ARGS = RETURN_TYPE(__cdecl *ARGS()ADDRESS)
 
 #define UNKNOWN_FUNCTION(NAME) void NAME(void)
 #define UNKNOWN_FUNCTION_ARGS(...)(__VA_ARGS__)
@@ -58,8 +59,7 @@ static RETURN_TYPE(REVO_CALL* NAME) ARGS = RETURN_TYPE(REVO_CALL *ARGS()ADDRESS)
 #define VOID_FUNCTION(NAME) void NAME(void) 
 #define STATIC_FUNCTION(NAME) static void NAME(void) 
 
-#define DATA_POINTER(NAME, TYPE, ADDRESS) \
-static TYPE &NAME = (*TYPE)&ADDRESS;
+#define OBJECT_FUNCTION(NAME, ADDRESS) FUNCTION_POINTER(void, NAME, ADDRESS);
 
 #define DATA_ARRAY(NAME, TYPE, ADDRESS, LENGTH) \
 static TYPE *const NAME = (*TYPE)&ADDRESS;
@@ -78,13 +78,21 @@ static inline U64 REVO_CALL DELTA_TIME(U64* const TIME)
 	return DELTA_TIME(TIME);
 }
 
+
 #if defined(USE_GAME_PARAMS)
 #define USE_GAME_PARAMS
 #else
 #define USE_GAME_PARAMS
 
 typedef void(*ADDRESS)(void);
-typedef void(*MEM_SOURCE)(void);
+typedef struct MEM_SOURCE;
+typedef struct DOLPHIN_POINTER;
+
+typedef struct REVO_INSTANCE
+{
+	static char GAME_ID;
+	typedef char LOAD_GAME_ID;
+};
 
 #endif
 
