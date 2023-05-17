@@ -22,9 +22,4 @@ typedef enum MENU_STATE : U32
 	CLEARED              = 6,
 };
 
-typedef struct MENU_MANAGER
-{
-	typedef U16* GET_STATE_COUNT();
-};
-
 #endif
