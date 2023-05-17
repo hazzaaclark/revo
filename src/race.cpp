@@ -195,6 +195,78 @@ static inline void GET_COURSE_NAME(RACE_MANAGER::RACE_INDEX INDEX, DISCORD_RICH_
 		PRESENCE->LARGE_IMAGE_TEXT = "and the crowd goes wild!";
 		break;
 
+		/*-----------------------------------------------------*/
+		/*                     BANANA CUP                      */
+		/*-----------------------------------------------------*/
+
+	case COURSES::N64_SHERBET_LAND:
+		PRESENCE->LARGE_IMAGE_KEY = "N64 Sherbet Land";
+		PRESENCE->LARGE_IMAGE_TEXT = "Racing on Thin Ice";
+		break;
+
+	case COURSES::GBA_SHY_GUY_BEACH:
+		PRESENCE->LARGE_IMAGE_KEY = "GBA Shy Guy Beach";
+		PRESENCE->LARGE_IMAGE_TEXT = "The Pirates attack!";
+		break;
+
+	case COURSES::DS_DELFINO_SQUARE:
+		PRESENCE->LARGE_IMAGE_KEY = "DS Delfino Square";
+		PRESENCE->LARGE_IMAGE_TEXT = "Cruising around Isle Delfino";
+		break;
+
+	case COURSES::GCN_WALUIGI_STADIUM:
+		PRESENCE->LARGE_IMAGE_KEY = "GCN Waluigi Stadium";
+		PRESENCE->LARGE_IMAGE_TEXT = "Causing mayhem in Waluigi's Stadium";
+		break;
+
+		/*-----------------------------------------------------*/
+		/*                       LEAF CUP                      */
+		/*-----------------------------------------------------*/
+
+	case COURSES::DS_DESERT_HILLS:
+		PRESENCE->LARGE_IMAGE_KEY = "DS Desert Hills";
+		PRESENCE->LARGE_IMAGE_TEXT = "Racing in the scorching heat (again)";
+		break;
+
+	case COURSES::GBA_BOWSER_CASTLE_3:
+		PRESENCE->LARGE_IMAGE_KEY = "GBA Bowser Castle 3";
+		PRESENCE->LARGE_IMAGE_TEXT = "Cutting those lava corners tight";
+		break;
+
+	case COURSES::N64_DKS_JUNGLE_PARKWAY:
+		PRESENCE->LARGE_IMAGE_KEY = "N64 DK Jungle Parkway";
+		PRESENCE->LARGE_IMAGE_TEXT = "Racing through DK's biome";
+		break;
+
+	case COURSES::GCN_MARIO_CIRCUIT:
+		PRESENCE->LARGE_IMAGE_KEY = "GCN Mario Circuit";
+		PRESENCE->LARGE_IMAGE_TEXT = "Avoiding Piranha's and Chain Chomps";
+		break;
+
+		/*-----------------------------------------------------*/
+		/*                  LIGHTNING CUP                      */
+		/*-----------------------------------------------------*/
+
+	case COURSES::SNES_MARIO_CIRCUIT_3:
+		PRESENCE->LARGE_IMAGE_KEY = "SNES Mario Circuit 3";
+		PRESENCE->LARGE_IMAGE_TEXT = "Avoiding Oil spillings";
+		break;
+
+	case COURSES::DS_PEACH_GARDENS:
+		PRESENCE->LARGE_IMAGE_KEY = "DS Peach Gardens";
+		PRESENCE->LARGE_IMAGE_TEXT = "Weaving through flower beds";
+		break;
+
+	case COURSES::GCN_DK_MOUNTAIN:
+		PRESENCE->LARGE_IMAGE_KEY = "GCN DK Mountain";
+		PRESENCE->LARGE_IMAGE_TEXT = "Dodging the on-coming boulders";
+		break;
+
+	case COURSES::N64_BOWSERS_CASTLE:
+		PRESENCE->LARGE_IMAGE_KEY = "N64 Bowser's Castle";
+		PRESENCE->LARGE_IMAGE_TEXT = "The Final Stetch";
+		break;
+
 
 	default:
 		printf("Invalid course index\n");
