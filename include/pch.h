@@ -6,6 +6,7 @@
 #include "discord.h"
 #include "dolphin.h"
 #include "dvd.h"
+#include "menu.h"
 #include "os.h"
 #include "race.h"
 
