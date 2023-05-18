@@ -59,8 +59,7 @@ static RETURN_TYPE(__cdecl* const NAME)ARGS = RETURN_TYPE(__cdecl *ARGS()ADDRESS
 #define VOID_FUNCTION(NAME) void NAME(void) 
 #define STATIC_FUNCTION(NAME) static void NAME(void) 
 
-#define OBJECT_FUNCTION(NAME, ADDRESS) FUNCTION_POINTER(void, NAME, ADDRESS);
-
+#define OBJECT_FUNCTION(NAME, ADDRESS) void NAME(void)
 #define DATA_ARRAY(NAME, TYPE, ADDRESS, LENGTH) \
 static TYPE *const NAME = (*TYPE)&ADDRESS;
 
@@ -92,6 +91,11 @@ typedef struct REVO_INSTANCE
 {
 	static char GAME_ID;
 	typedef char LOAD_GAME_ID;
+};
+
+static bool GET_REAL_ADDR()
+{
+	return 1, sizeof(ADDRESS);
 };
 
 #endif
