@@ -48,6 +48,7 @@ static inline bool IS_PLAYING_MKW(HANDLE)
 		if (ID == ID)
 		{
 			return true;
+			GET_REVO_INSTANCE();
 		}
 		
 		return false;
