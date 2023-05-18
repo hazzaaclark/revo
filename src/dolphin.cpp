@@ -8,6 +8,8 @@
 /* NESTED INCLUDES */
 
 #include "dolphin.h"
+#include "menu.h"
+#include "dvd.h"
 
 /* USING THE DEFINE DIRECTIVE IN THE RESPECTIVE HEADER FILE */
 /* THIS FUNCTION WILL CONSTRUCT A NEW INSTANCE OF THE MEMORY POINTER */
@@ -35,5 +37,21 @@ static inline REVO_INSTANCE* GET_REVO_INSTANCE(void)
 		return;
 	};
 };
+
+/* CREATE A HANDLE EXCEPTION TO DETERMINE IF THE GAME IS LOADED */
+/* RELATIVE TO THE RESPECTIVE BASE ADDRESS AND GAME ID */
+
+static inline bool IS_PLAYING_MKW(HANDLE)
+{
+	if (!GET_REAL_ADDR())
+	{
+		if (ID == ID)
+		{
+			return true;
+		}
+		
+		return false;
+	}
+}
 
 #endif
