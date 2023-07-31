@@ -37,68 +37,54 @@ extern DECLSPEC U32 REVO_CALL REVO_SUSPEND(void);
 #ifndef PROCESS_MEMORY
 #define PROCESS_MEMORY
 
-/* WINDOWS API HANDLER */
-/* USED AS A CRUX TO DETERMINE THE CURRENT PROCESS */
-
-#ifndef WIN_32_LEAN_AND_MEAN
-#define WIN_32_LEAN_AND_MEAN
-
-#include <Windows.h>
-
-static HANDLE CURRENT_PROCESS;
-static HHOOK HOOK;
-
-#endif
-
-#define FUNCTION_POINTER(RETURN_TYPE, NAME, ARGS, ADDRESS) \
-static RETURN_TYPE(__cdecl* const NAME)ARGS = RETURN_TYPE(__cdecl *ARGS()ADDRESS)
-
-#define UNKNOWN_FUNCTION(NAME) void NAME(void)
-#define UNKNOWN_FUNCTION_ARGS(...)(__VA_ARGS__)
-
-#define VOID_FUNCTION(NAME) void NAME(void) 
-#define STATIC_FUNCTION(NAME) static void NAME(void) 
-
-#define OBJECT_FUNCTION(NAME, ADDRESS) void NAME(void)
-#define DATA_ARRAY(NAME, TYPE, ADDRESS, LENGTH) \
-static TYPE *const NAME = (*TYPE)&ADDRESS;
-
-static inline BOOL READ_DATA(void* ADDRESS, UNK* VALUE[], U32 LENGTH);
-
-static inline BOOL WRITE_DATA(void* ADDRESS, const char DATA, UNK* BYTES)
-{
-	typedef U32 RESULT;
-	RESULT GET_RESULT = WRITE_DATA(ADDRESS, DATA, NULL);
-	return GET_RESULT;
-}
-
-static inline U64 REVO_CALL DELTA_TIME(U64* const TIME)
+static inline U64 REVO_CALL DELTA_TIME(const U64* TIME)
 {
 	return DELTA_TIME(TIME);
 }
 
+#endif
 
-#if defined(USE_GAME_PARAMS)
-#define USE_GAME_PARAMS
+#if defined(DOLPHIN_UTILS)
+#define DOLPHIN_UTILS
 #else
-#define USE_GAME_PARAMS
+#define DOLPHIN_UTILS
 
-typedef void(*ADDRESS)(void);
-typedef struct MEM_SOURCE;
-typedef struct DOLPHIN_POINTER;
+#define DOL_IPC_OK                                  0
+#define DOL_IPC_ACCESS                             -1
+#define DOL_IPC_BUSY                               -2
+#define DOL_IPC_INVAL                              -4
+#define DOL_IPC_NO_ENT                             -6
+#define DOL_IPC_EQU_FULL                           -8
+#define DOL_IPC_END_MEM                           -22
 
-typedef struct REVO_INSTANCE
+#define DOL_IOS_OPEN                                0
+#define DOL_IOS_READ                                1 << 0
+#define DOL_IOS_WRITE                               1 << 1
+#define DOL_IOS_RW          (DOL_IOS_READ | DOL_IOS_WRITE)
+
+typedef struct DOL_IOCTRL
 {
-	static char GAME_ID;
-	typedef char LOAD_GAME_ID;
+	typedef void(*DATA)(void);
+	typedef U32 SIZE;
+
+	typedef S32 DOLPHIN_SIG; // FLAG TO DETERMINE DOLPHIN BUILD (DEBUG)
 };
 
-static bool GET_REAL_ADDR()
+typedef struct DOL_IOS
 {
-	return 1, sizeof(ADDRESS);
+	typedef S32 IOS_COMMAND;
+	typedef S32 IOS_OPEN(const char* PATH, U32 FLAGS);
+	typedef S32 IOS_CLOSE(S32 HANDLER);
+	typedef S32 IOS_IO(S32 HANLDER, IOS_COMMAND COMMAND, void* INPUT, U32 INPUT_SIZE, void* OUTPUT, U32 OUTPUT_SIZE);
+	typedef S32 IOS_IO_VECTOR(S32 HANDLER, IOS_COMMAND COMMAND, U32 INPUT_COUNT, U32 OUTPUT_COUNT, DOL_IOCTRL* IO);
+};
+
+typedef struct IOS_RESULT
+{
+	typedef IOS_RESULT* DISCORD_SET(const char* APP_ID);
+	typedef IOS_RESULT* DISCORD_CLEAR();
 };
 
 #endif
 
-#endif
 #endif
