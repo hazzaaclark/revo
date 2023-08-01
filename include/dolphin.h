@@ -12,13 +12,14 @@
 /* NESTED INCLUDES */
 
 #include "common.h"
+#include "discord.h"
 
 /* NESTED INCLUDES */
 
-#include <iosfwd>
-#include <process.h>
+#include <cstdio>
 #include <stdio.h>
-#include <thread>
+#include <stdlib.h>
+
 
 /* USING THE C CONVENTION CALL SCHEMA */
 /* I CAN DYNAMICALLY LOAD THE PROGRAM */
@@ -73,16 +74,16 @@ typedef struct DOL_IOCTRL
 typedef struct DOL_IOS
 {
 	typedef S32 IOS_COMMAND;
-	typedef S32 IOS_OPEN(const char* PATH, U32 FLAGS);
-	typedef S32 IOS_CLOSE(S32 HANDLER);
-	typedef S32 IOS_IO(S32 HANLDER, IOS_COMMAND COMMAND, void* INPUT, U32 INPUT_SIZE, void* OUTPUT, U32 OUTPUT_SIZE);
-	typedef S32 IOS_IO_VECTOR(S32 HANDLER, IOS_COMMAND COMMAND, U32 INPUT_COUNT, U32 OUTPUT_COUNT, DOL_IOCTRL* IO);
+	static U32* IOS_OPEN();
+	static S32 IOS_CLOSE(S32 HANDLER);
+	static S32 IOS_IO(S32 HANLDER, IOS_COMMAND COMMAND, void* INPUT, U32 INPUT_SIZE, void* OUTPUT, U32 OUTPUT_SIZE);
+	static S32 IOS_IO_VECTOR(S32 HANDLER, IOS_COMMAND COMMAND, U32 INPUT_COUNT, U32 OUTPUT_COUNT, DOL_IOCTRL* IO);
 };
 
 typedef struct IOS_RESULT
 {
-	typedef IOS_RESULT* DISCORD_SET(const char* APP_ID);
-	typedef IOS_RESULT* DISCORD_CLEAR();
+	IOS_RESULT* DISCORD_SET(const char* APP_ID);
+	IOS_RESULT* DISCORD_CLEAR();
 };
 
 #endif
