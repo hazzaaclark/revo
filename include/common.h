@@ -46,6 +46,8 @@ typedef volatile double VF64;
 #ifndef COMPILER
 #define COMPILER
 
+#define VOID_FUNCTION(NAME) void NAME()
+
 #ifndef DECLSPEC
 #define DECLSPEC __declspec(dllexport)
 #else
@@ -56,6 +58,7 @@ typedef volatile double VF64;
 extern "C"
 {}
 #endif
+
 
 #ifndef REVO_CALL
 #if defined(_WIN32_LEAN_AND_MEAN)
