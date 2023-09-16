@@ -11,11 +11,9 @@
 
 /* NESTED INCLUDES */
 
-#include "dvd.h"
-#include "os.h"
 #include "common.h"
 
-extern DECLSPEC REVO_CALL S16 CHAR_ID_SLOT();
+extern DECLSPEC REVO_CALL S32 CHAR_ID_SLOT();
 extern DECLSPEC REVO_CALL S16 COURSE_ID_SLOT();
 
 #ifndef RACE_PARAMS
@@ -34,7 +32,7 @@ extern DECLSPEC REVO_CALL S16 COURSE_ID_SLOT();
 typedef enum CHARACTERS
 {
 	BABY_MARIO = 0x6,
-	MINI_LUIGI = 0xC,
+	BABY_LUIGI = 0xC,
 	BABY_PEACH = 0x1,
 	BABY_DAISY = 0x4,
 	TOAD = 0x8,
@@ -103,9 +101,6 @@ typedef struct RACE_CACHE
 	typedef void(*CACHE_INIT)(void);
 	typedef void(*CACHE_LOAD)(void);
 	typedef void(*CACHE_FREE)(void);
-	typedef void(*CACHE_LOAD_HEAP)(DVD_ARCHIVE* DVD_ARCHIVE, HEAP* HEAP);
-	void(*CACHE_BUFFER)(void);
-	void(*CACHE_BLOCK)(void);
 };
 
 /* ALLOCATE THE CONSTRUCTOR FOR THE COURSE RELATIVE */
@@ -116,14 +111,8 @@ typedef struct RACE_CACHE
 
 typedef struct RACE_MANAGER
 {
-	static DVD_ARCHIVE* SCENE_ARCHIVE;
-	static DVD_ARCHIVE* SYSTEM_ARCHIVE;
-
 	typedef char* RACE_FILENAME;
 	typedef U32 RACE_INDEX;
-	typedef DVD_ARCHIVE* LOAD_COURSE(COURSES* COURSES);
-	typedef DVD_ARCHIVE* LOAD_SYSTEM_RESOURCES();
-
 	typedef bool(*SCENE_INIT)();
 };
 
