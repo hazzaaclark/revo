@@ -66,7 +66,7 @@ REVO_CALL U64 DELTA_TIME(const U64* TIME)
 typedef struct DOL_IOCTRL
 {
 	typedef void(*DATA)(void);
-	typedef U32 SIZE;
+	static U32 SIZE;
 
 	typedef S32 DOLPHIN_SIG; // FLAG TO DETERMINE DOLPHIN BUILD (DEBUG)
 };
@@ -82,8 +82,8 @@ typedef struct DOL_IOS
 
 typedef struct IOS_RESULT
 {
-	IOS_RESULT* DISCORD_SET(const char* APP_ID);
-	IOS_RESULT* DISCORD_CLEAR();
+	static IOS_RESULT* DISCORD_SET(const char* APP_ID);
+	static IOS_RESULT* DISCORD_CLEAR();
 };
 
 #endif
