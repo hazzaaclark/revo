@@ -1,6 +1,13 @@
 # revo
 Mario Kart Wii Discord Rich Presence
 
+# NOTICE:
+
+As of December 27th 2023, this project is under renovation, code refactoring, etc
+So, please bare with me as I develop this project from scratch 
+
+(in other words, ignore the 200+ commits of nothingness )
+
 ![image](https://user-images.githubusercontent.com/107435091/227042643-fbb989ed-e7fb-465b-b4df-5c6a17809e1b.png)
 
 ``Using the decompilation of Mario Kart Wii, this is my Discord Rich Presence extension for Mario Kart Wii``
