@@ -63,6 +63,8 @@ int OSLink(OSModuleInfo* info, void* bss);
 // PAL: 0x801a72e4..0x801a72fc
 void __OSModuleInit(void);
 
+void OSReport(char* MESSAGE, const char* SMAP);
+
 #ifdef __cplusplus
 }
 #endif
