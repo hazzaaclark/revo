@@ -64,6 +64,7 @@ int OSLink(OSModuleInfo* info, void* bss);
 void __OSModuleInit(void);
 
 void OSReport(char* MESSAGE, const char* SMAP);
+void OSPanic(char* MESSAGE, int LEVEL, const char* TAG);
 
 #ifdef __cplusplus
 }
