@@ -3,10 +3,10 @@
  * @brief System Manager implementations.
  */
 
-#include <EGG/util/eggException.hpp>
-#include <Static/System/SystemManager.hpp>
+#include <host_system/SystemManager.hpp>
 
-namespace System {
+namespace System 
+{
 
 static const char* sRegionCode = "RMCP";
 static const char* MAIN_SMAP = "/rel/RevoKartR.SMAP";
@@ -26,20 +26,17 @@ void SystemManager::LoadSymbols(OSModuleInfo* pModuleInfo) {
 
   if (MAIN_SMAP != nullptr) // "/rel/RevoKartR.SMAP"
   {
-    u32 map_size;
-    mpMap = SystemManager::sInstance->ripFromDisc(MAIN_SMAP, pModuleInfo, 0,
-                                                  &map_size, 0);
-    if (mpMap != nullptr) {
-      EGG::Exception::setMapFile(mpMap, map_size, pModuleInfo);
-      OSReport("[SYS] Load MapFile \"%s\" success.\n", MAIN_SMAP);
-    } else {
-      OSReport("[SYS] Load MapFile \"%s\" fail.\n", MAIN_SMAP);
+      u32 map_size;
+      u32* mpMap = (unsigned int*)SystemManager::sInstance->ripFromDisc(MAIN_SMAP, (EGG::Heap*)pModuleInfo, 0, &map_size, 0);
+
+      if (mpMap != nullptr) 
+      {
+        OSReport("[SYS] Load MapFile \"%s\" success.\n", MAIN_SMAP);
+      } 
+      else 
+      {
+        OSReport("[SYS] Load MapFile \"%s\" fail.\n", MAIN_SMAP);
+      }
     }
   }
-
-  buf_88->_0 = 0;
-  buf_8C->_0 = 0;
-  buf_90->_0 = 0;
-}
-
 } // namespace System
