@@ -1,6 +1,7 @@
 #include "SceneCreatorStatic.hpp"
 
 #include <game/host_system/RKScene.hpp>
+#include <rvl/os/osLink.h>
 
 namespace System {
 
